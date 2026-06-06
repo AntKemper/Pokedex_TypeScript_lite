@@ -1,7 +1,7 @@
 import { PokemonResumo }
 from "../models/Pokemon.js";
 
- async function buscarPokemon(  nomeOuId: string): Promise<PokemonResumo | null> {
+async function buscarPokemon(  nomeOuId: string): Promise<PokemonResumo | null> {
 
   try {
 
@@ -24,13 +24,10 @@ from "../models/Pokemon.js";
 
     return pokemon;
 
-  } catch (error) {
-
-    console.error(
-      "Erro ao acessar a API:",
-      error
-    );
-
-    return null;
-  }
+  } catch (error){
+        if (error instanceof APIError){
+            throw error
+        }
+            throw new APIError('Falha de comunicação com API')
+    }
 }
