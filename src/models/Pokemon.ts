@@ -17,7 +17,7 @@ export interface PokemonApiResponse {
      }[];
 } 
 
-}
+
 
 // Deve se implementar a interface em uma classe para poder para definir os valores das propriedades, ou seja, para criar um objeto do tipo PokemonResume.
 

@@ -1,7 +1,9 @@
-import { PokemonResumo }
-from "../models/Pokemon.js";
+import PokemonResume, PokemonApiResponse from "../models/Pokemon.js";
 
-async function buscarPokemon(  nomeOuId: string): Promise<PokemonResumo | null> {
+import APIError from "../models/CustomErro.js";
+
+
+async function buscarPokemon(  nomeOuId: string): Promise<PokemonResume | null> {
 
   try {
 
@@ -15,7 +17,7 @@ async function buscarPokemon(  nomeOuId: string): Promise<PokemonResumo | null> 
 
     const data = await response.json();
 
-    const pokemon: PokemonResumo = {
+    const pokemon: PokemonResume = {
       id: data.id,
       name: data.name,
       height: data.height,
@@ -31,3 +33,27 @@ async function buscarPokemon(  nomeOuId: string): Promise<PokemonResumo | null> 
             throw new APIError('Falha de comunicação com API')
     }
 }
+
+
+//Mapear a API response para o formato do PokemonResume, ou seja, para criar um objeto do tipo PokemonResume a partir dos dados retornados pela API.
+mapearPokemon(dados: PokemonApiResponse): PokemonResumo {
+    const tipos = dados.types.map((item) => item.type.name);
+
+    const encontrarStat = (nomeStat: string): number => {
+      const statEncontrado = dados.stats.find((item) => item.stat.name === nomeStat);
+      return statEncontrado?.base_stat ?? 0;
+    };
+
+    return {
+      id: dados.id,
+      nome: dados.name,
+      tipos,
+      altura: dados.height,
+      peso: dados.weight,
+    };
+  }
+}
+
+
+
+
