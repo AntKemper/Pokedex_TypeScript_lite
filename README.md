@@ -138,7 +138,7 @@ Informe onde foram usados map, filter, find, some, every, reduce ou
 forEach.
 
 Link do Kanban:
-(https://trello.com/b/WIRIplIT/projeto-pokeapi)
+https://trello.com/b/WIRIplIT/projeto-pokeapi
 
 
 Branches utilizadas
