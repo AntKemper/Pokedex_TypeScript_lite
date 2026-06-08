@@ -1,4 +1,4 @@
-import PokemonResume, PokemonApiResponse from "../models/Pokemon.js";
+import {PokemonResume, PokemonApiResponse} from "../models/Pokemon.js";
 
 import APIError from "../models/CustomErro.js";
 
@@ -30,13 +30,15 @@ async function buscarPokemon(  nomeOuId: string): Promise<PokemonResume | null> 
         if (error instanceof APIError){
             throw error
         }
-            throw new APIError('Falha de comunicação com API')
+            throw new APIError('Falha de comunicação com a API', 500);
     }
 }
 
 
 //Mapear a API response para o formato do PokemonResume, ou seja, para criar um objeto do tipo PokemonResume a partir dos dados retornados pela API.
-mapearPokemon(dados: PokemonApiResponse): PokemonResumo {
+
+
+mapearPokemon(dados: PokemonApiResponse): PokemonResume {
     const tipos = dados.types.map((item) => item.type.name);
 
     const encontrarStat = (nomeStat: string): number => {
