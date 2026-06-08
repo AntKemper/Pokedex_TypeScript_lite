@@ -144,5 +144,4 @@ Link do Kanban:
 Branches utilizadas
 - main
 - develop
-- feat/pokedex
-- docs/readme
+- feature/model_product
