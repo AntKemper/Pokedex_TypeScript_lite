@@ -46,7 +46,7 @@ Clone o repositório:
 
 No terminal bash, realize os seguintes passos para execusão:
 
-git clone LINK_DO_REPOSITORIO
+git clone https://github.com/AntKemper/Pokedex_TypeScript_lite.git
 Acesse a pasta do projeto:
 cd pokedex-typescript-lite
 Instale as dependências:
@@ -56,20 +56,7 @@ Execute o projeto em ambiente de desenvolvimento:
 
 npm run dev
 Estrutura do projeto
-pokedex-typescript-lite/
-│
-├── src/
-│ ├── controllers
-│ ├── models
-│ ├── services
-│ ├── utlil
-| ├── main.ts
-│
-├── package.json
-├── tsconfig.json
-├── package-lock.json
-├──README.md
-└── tsconfig.json
+<img width="382" height="530" alt="image" src="https://github.com/user-attachments/assets/7e91b168-824b-4b4c-acde-a3e54180491e" />
 
 
 # Funcionalidades
