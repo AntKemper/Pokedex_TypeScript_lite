@@ -55,7 +55,10 @@ Como executar
 Execute o projeto em ambiente de desenvolvimento:
 
 npm run dev
+
 Estrutura do projeto
+
+
 <img width="382" height="530" alt="image" src="https://github.com/user-attachments/assets/7e91b168-824b-4b4c-acde-a3e54180491e" />
 
 
